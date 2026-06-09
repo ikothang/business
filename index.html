@@ -3,39 +3,148 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Homestay Hanis - Penginapan Mewah & Selesa Untuk Keluarga</title>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>Homestay Hanis | Penginapan Selesa Bak Istana, Harga Poket Mesra</title>
+    
+    <!-- Google Fonts & FontAwesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    
+    <!-- Custom Vanilla CSS -->
     <style>
-        :root { --primary: #0F2C59; --accent: #DAC0A3; }
-        body { font-family: 'Plus Jakarta Sans', sans-serif; }
-        /* Gaya asal dikekalkan sepenuhnya */
+        :root {
+            --primary-color: #c5a880; /* Gold/Bronze Premium */
+            --secondary-color: #1e2d2f; /* Deep Emerald/Slate */
+            --dark-color: #111b1d;
+            --light-color: #f9f6f0;
+            --white: #ffffff;
+            --shadow: 0 10px 30px rgba(0,0,0,0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+        body { background-color: var(--light-color); color: var(--dark-color); line-height: 1.6; }
+
+        /* Hero Section */
+        header {
+            background: linear-gradient(rgba(30, 45, 47, 0.75), rgba(17, 27, 29, 0.85)), 
+                        url('https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: var(--white);
+            padding: 0 20px;
+            position: relative;
+        }
+
+        .logo { font-size: 2.5rem; font-weight: 700; letter-spacing: 2px; color: var(--primary-color); margin-bottom: 20px; text-transform: uppercase; }
+        header h1 { font-size: 3rem; font-weight: 700; margin-bottom: 15px; max-width: 800px; line-height: 1.2; }
+        header p { font-size: 1.2rem; margin-bottom: 30px; max-width: 600px; color: #e0e0e0; }
+        .btn-primary { background-color: var(--primary-color); color: var(--dark-color); padding: 15px 35px; border: none; border-radius: 50px; font-size: 1.1rem; font-weight: 600; cursor: pointer; text-decoration: none; transition: var(--transition); box-shadow: 0 4px 15px rgba(197, 168, 128, 0.4); }
+        .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(197, 168, 128, 0.6); background-color: var(--white); }
+        .urgent-banner { background-color: #d9534f; color: white; text-align: center; padding: 10px; font-weight: 600; font-size: 0.9rem; width: 100%; position: absolute; bottom: 0; }
+
+        /* Features Section */
+        .features { padding: 80px 20px; max-width: 1200px; margin: 0 auto; text-align: center; }
+        .section-title { font-size: 2.2rem; color: var(--secondary-color); margin-bottom: 50px; position: relative; }
+        .section-title::after { content: ''; display: block; width: 80px; height: 3px; background-color: var(--primary-color); margin: 10px auto 0; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+        .card { background: var(--white); padding: 40px 30px; border-radius: 15px; box-shadow: var(--shadow); transition: var(--transition); }
+        .card:hover { transform: translateY(-10px); }
+        .card i { font-size: 3rem; color: var(--primary-color); margin-bottom: 20px; }
+        
+        /* Booking Section */
+        .booking-section { background-color: var(--secondary-color); color: var(--white); padding: 80px 20px; }
+        .booking-container { max-width: 700px; margin: 0 auto; background: rgba(255, 255, 255, 0.05); padding: 40px; border-radius: 20px; border: 1px solid rgba(197, 168, 128, 0.2); box-shadow: var(--shadow); }
+        .form-group { margin-bottom: 20px; text-align: left; }
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        label { display: block; margin-bottom: 8px; font-weight: 600; font-size: 0.9rem; color: var(--primary-color); }
+        input, textarea { width: 100%; padding: 12px 15px; border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.1); border-radius: 8px; color: var(--white); font-size: 1rem; }
+        .btn-submit { width: 100%; background-color: var(--primary-color); color: var(--dark-color); padding: 15px; border: none; border-radius: 8px; font-size: 1.1rem; font-weight: 700; cursor: pointer; transition: var(--transition); margin-top: 10px; }
+        .btn-submit:hover { background-color: var(--white); }
+
+        footer { background-color: var(--dark-color); color: #888; text-align: center; padding: 30px 20px; font-size: 0.9rem; }
+        @media (max-width: 768px) { .form-row { grid-template-columns: 1fr; gap: 0; } }
     </style>
 </head>
 <body>
-    <!-- (Kod asal anda di sini) -->
-    
+
+    <header>
+        <div class="logo">Homestay Hanis</div>
+        <h1>Rasai Penginapan Premium Setaraf Hotel 5-Bintang Pada Harga Bajet</h1>
+        <p>Lengkap dengan kolam renang privat, interior moden mewah, dan berdekatan dengan pusat tarikan utama bandar.</p>
+        <a href="#tempah" class="btn-primary"><i class="fa-solid fa-calendar-days"></i> Tempah Slot Anda Sekarang</a>
+        <div class="urgent-banner">
+            <i class="fa-solid fa-fire"></i> Amaran: Hanya tinggal 2 slot kosong sahaja lagi untuk hujung minggu ini!
+        </div>
+    </header>
+
+    <section class="features">
+        <h2 class="section-title">Kenapa Pilih Homestay Hanis?</h2>
+        <div class="grid">
+            <div class="card"><i class="fa-solid fa-bed"></i><h3>4 Bilik Premium</h3><p>Setiap bilik dilengkapi penghawa dingin (AC) penuh dan katil bersaiz King.</p></div>
+            <div class="card"><i class="fa-solid fa-swimming-pool"></i><h3>Kolam Renang Privasi</h3><p>Mandi-manda bersama keluarga tanpa gangguan luar.</p></div>
+            <div class="card"><i class="fa-solid fa-wifi"></i><h3>WiFi 5G & Smart TV</h3><p>Strim Netflix, YouTube tanpa gangguan sepanjang penginapan.</p></div>
+        </div>
+    </section>
+
+    <section class="booking-section" id="tempah">
+        <div class="booking-container">
+            <form id="bookingForm">
+                <div class="form-group"><label>Nama Penuh</label><input type="text" id="nama" required></div>
+                <div class="form-row">
+                    <div class="form-group"><label>Check-In</label><input type="date" id="checkin" required></div>
+                    <div class="form-group"><label>Check-Out</label><input type="date" id="checkout" required></div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group"><label>No. Telefon</label><input type="tel" id="notel" required></div>
+                    <div class="form-group"><label>E-mel</label><input type="email" id="email" required></div>
+                </div>
+                <div class="form-group"><label>Alamat</label><textarea id="alamat" required></textarea></div>
+                <button type="submit" class="btn-submit">Hantar & Pengesahan Segera</button>
+            </form>
+        </div>
+    </section>
+
+    <footer><p>&copy; 2026 Homestay Hanis. Hak Cipta Terpelihara.</p></footer>
+
     <script>
-        // URL Google Script anda yang telah dikemaskini
-        const EXCEL_WEBHOOK_URL = "https://script.google.com/macros/s/AKfycbxOLeQlfBB76aBxfnLwYEhE8Pqde_k9g1qGRwYpjU0u-0MRXSfcIHEI4ho0vLwxxv8u/exec";
+        document.getElementById('bookingForm').addEventListener('submit', function(e) {
+            e.preventDefault();
 
-        // Fungsi penghantaran data ke Google Sheet
-        async function hantarKeGoogleSheet(data) {
-            try {
-                const response = await fetch(EXCEL_WEBHOOK_URL, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(data)
-                });
-                console.log("Data berjaya dihantar ke Google Sheet.");
-            } catch (err) {
-                console.error("Ralat menghantar data:", err);
-            }
-        }
+            const nama = document.getElementById('nama').value;
+            const checkin = document.getElementById('checkin').value;
+            const checkout = document.getElementById('checkout').value;
+            let notel = document.getElementById('notel').value;
+            const email = document.getElementById('email').value;
+            const alamat = document.getElementById('alamat').value;
+            const invNo = 'INV-' + Math.floor(100000 + Math.random() * 900000);
 
-        // Fungsi ini dipanggil dalam event listener form submit anda
-        // Pastikan anda memanggil hantarKeGoogleSheet(payload) di dalam fungsi form submit anda
+            // Gantikan URL di bawah dengan App Script anda
+            const excelWebhookURL = "https://script.google.com/macros/s/AKfycbxOLeQlfBB76aBxfnLwYEhE8Pqde_k9g1qGRwYpjU0u-0MRXSfcIHEI4ho0vLwxxv8u/exec";
+            
+            const formData = new FormData();
+            formData.append('Invoice', invNo);
+            formData.append('Nama', nama);
+            formData.append('CheckIn', checkin);
+            formData.append('CheckOut', checkout);
+            formData.append('NoTel', notel);
+            formData.append('Email', email);
+            formData.append('Alamat', alamat);
+
+            fetch(excelWebhookURL, {
+                method: 'POST',
+                body: formData,
+                mode: 'no-cors'
+            }).then(() => {
+                alert("Tempahan berjaya dihantar!");
+                window.location.reload();
+            }).catch(err => {
+                console.error("Ralat:", err);
+            });
+        });
     </script>
 </body>
 </html>
