@@ -1144,7 +1144,7 @@
         
         <div class="excel-link-banner">
             <span><i class="fa-solid fa-file-excel" style="color: #107C41; margin-right: 8px;"></i> <strong>Fail Excel Sasaran:</strong> <code>https://docs.google.com/spreadsheets/d/1w-UvCdue0BJvms_o5U0PzU4CoGnp791R/...</code></span>
-            <a href="https://docs.google.com/spreadsheets/d/1w-UvCdue0BJvms_o5U0PzU4CoGnp791R/edit?usp=drive_link&ouid=116404865907969441378&rtpof=true&sd=true" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i> Buka Excel</a>
+            <a href="https://docs.google.com/spreadsheets/d/1w-UvCdue0BJvms_o5U0PzU4CoGnp791R/edit?usp=sharing&ouid=116404865907969441378&rtpof=true&sd=true" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i> Buka Excel</a>
         </div>
 
         <button class="btn-toggle-instructions" id="btnToggleInstructions">Tunjukkan Cara Aktifkan Auto-Kemasukan Data Excel 5 Minit</button>
@@ -1157,22 +1157,24 @@
             </ol>
             <pre style="background: #FFF; padding: 15px; border-radius: 8px; border: 1px solid #F59E0B; margin: 10px 0; font-family: monospace; overflow-x: auto; font-size: 0.8rem; color: #1F2937;">
 function doPost(e) {
-  var sheet = SpreadsheetApp.openByUrl("https://docs.google.com/spreadsheets/d/1w-UvCdue0BJvms_o5U0PzU4CoGnp791R/edit?usp=drive_link&ouid=116404865907969441378&rtpof=true&sd=true").getActiveSheet();
+  var sheet = SpreadsheetApp.openByUrl("https://docs.google.com/spreadsheets/d/1w-UvCdue0BJvms_o5U0PzU4CoGnp791R/edit?usp=sharing&ouid=116404865907969441378&rtpof=true&sd=true").getActiveSheet();
   
   // Mengendalikan data jenis JSON yang dihantar daripada GitHub Pages
   var data = JSON.parse(e.postData.contents);
-  sheet.appendRow([
-    data.Invoice, 
-    data.Nama, 
-    data.CheckIn, 
-    data.CheckOut, 
-    data.NoTel, 
-    data.Email, 
-    data.Alamat, 
-    data.Hari, 
-    data.Jumlah, 
-    new Date()
-  ]);
+  
+  // Dapatkan baris kosong seterusnya
+  var nextRow = sheet.getLastRow() + 1;
+  
+  // Masukkan data secara spesifik ke Column B (2) hingga G (7) mengikut header anda (B1 hingga G1)
+  sheet.getRange(nextRow, 2).setValue(data.Nama);      // Column B (B1: Nama)
+  sheet.getRange(nextRow, 3).setValue(data.CheckIn);   // Column C (C1: Tarikh Check-In)
+  sheet.getRange(nextRow, 4).setValue(data.CheckOut);  // Column D (D1: Tarikh Check-Out)
+  sheet.getRange(nextRow, 5).setValue(data.NoTel);     // Column E (E1: No Tel)
+  sheet.getRange(nextRow, 6).setValue(data.Email);     // Column F (F1: Email)
+  sheet.getRange(nextRow, 7).setValue(data.Alamat);    // Column G (G1: Alamat)
+  
+  // Opsional: Anda boleh masukkan No Invoice atau No Rujukan di Column A jika ada
+  sheet.getRange(nextRow, 1).setValue(data.Invoice);   // Column A (A1: Invoice)
   
   // Mengembalikan respon CORS yang mesra untuk GitHub Pages
   return ContentService.createTextOutput(JSON.stringify({"result": "success"}))
@@ -1301,6 +1303,9 @@ function doPost(e) {
 
         const PRICE_PER_NIGHT = 350;
 
+        // Penambahbaikan: Sila letakkan URL Web App Google Apps Script anda yang baharu di sini
+        const EXCEL_WEBHOOK_URL = ""; 
+
         function calculateNights() {
             const checkInValue = checkInInput.value;
             const checkOutValue = checkOutInput.value;
@@ -1398,10 +1403,6 @@ function doPost(e) {
             notif.querySelector('h5').innerText = "Menghantar Maklumat...";
             notif.querySelector('p').innerText = "Sila tunggu seketika semasa tempahan direkodkan.";
             notif.classList.add('show');
-
-            // 1. HANTAR DATA KE EXCEL SASARAN (Untuk dihoskan di GitHub Pages)
-            // Sila masukkan URL Web App Google Apps Script anda yang dideploy di langkah di atas.
-            const EXCEL_WEBHOOK_URL = ""; 
 
             const payload = {
                 Invoice: invoiceNo,
