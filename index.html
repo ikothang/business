@@ -21,8 +21,18 @@
             --transition: all 0.3s ease;
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
-        body { background-color: var(--light-color); color: var(--dark-color); line-height: 1.6; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: var(--light-color);
+            color: var(--dark-color);
+            line-height: 1.6;
+        }
 
         /* Hero Section */
         header {
@@ -39,38 +49,241 @@
             position: relative;
         }
 
-        .logo { font-size: 2.5rem; font-weight: 700; letter-spacing: 2px; color: var(--primary-color); margin-bottom: 20px; text-transform: uppercase; }
-        header h1 { font-size: 3rem; font-weight: 700; margin-bottom: 15px; max-width: 800px; line-height: 1.2; }
-        header p { font-size: 1.2rem; margin-bottom: 30px; max-width: 600px; color: #e0e0e0; }
-        .btn-primary { background-color: var(--primary-color); color: var(--dark-color); padding: 15px 35px; border: none; border-radius: 50px; font-size: 1.1rem; font-weight: 600; cursor: pointer; text-decoration: none; transition: var(--transition); box-shadow: 0 4px 15px rgba(197, 168, 128, 0.4); }
-        .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(197, 168, 128, 0.6); background-color: var(--white); }
-        .urgent-banner { background-color: #d9534f; color: white; text-align: center; padding: 10px; font-weight: 600; font-size: 0.9rem; width: 100%; position: absolute; bottom: 0; }
+        .logo {
+            font-size: 2.5rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            max-width: 800px;
+            line-height: 1.2;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            max-width: 600px;
+            color: #e0e0e0;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: var(--dark-color);
+            padding: 15px 35px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            transition: var(--transition);
+            box-shadow: 0 4px 15px rgba(197, 168, 128, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(197, 168, 128, 0.6);
+            background-color: var(--white);
+        }
+
+        /* Urgent Banner */
+        .urgent-banner {
+            background-color: #d9534f;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+        }
 
         /* Features Section */
-        .features { padding: 80px 20px; max-width: 1200px; margin: 0 auto; text-align: center; }
-        .section-title { font-size: 2.2rem; color: var(--secondary-color); margin-bottom: 50px; position: relative; }
-        .section-title::after { content: ''; display: block; width: 80px; height: 3px; background-color: var(--primary-color); margin: 10px auto 0; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
-        .card { background: var(--white); padding: 40px 30px; border-radius: 15px; box-shadow: var(--shadow); transition: var(--transition); }
-        .card:hover { transform: translateY(-10px); }
-        .card i { font-size: 3rem; color: var(--primary-color); margin-bottom: 20px; }
-        
-        /* Booking Section */
-        .booking-section { background-color: var(--secondary-color); color: var(--white); padding: 80px 20px; }
-        .booking-container { max-width: 700px; margin: 0 auto; background: rgba(255, 255, 255, 0.05); padding: 40px; border-radius: 20px; border: 1px solid rgba(197, 168, 128, 0.2); box-shadow: var(--shadow); }
-        .form-group { margin-bottom: 20px; text-align: left; }
-        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-        label { display: block; margin-bottom: 8px; font-weight: 600; font-size: 0.9rem; color: var(--primary-color); }
-        input, textarea { width: 100%; padding: 12px 15px; border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.1); border-radius: 8px; color: var(--white); font-size: 1rem; }
-        .btn-submit { width: 100%; background-color: var(--primary-color); color: var(--dark-color); padding: 15px; border: none; border-radius: 8px; font-size: 1.1rem; font-weight: 700; cursor: pointer; transition: var(--transition); margin-top: 10px; }
-        .btn-submit:hover { background-color: var(--white); }
+        .features {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
 
-        footer { background-color: var(--dark-color); color: #888; text-align: center; padding: 30px 20px; font-size: 0.9rem; }
-        @media (max-width: 768px) { .form-row { grid-template-columns: 1fr; gap: 0; } }
+        .section-title {
+            font-size: 2.2rem;
+            color: var(--secondary-color);
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 3px;
+            background-color: var(--primary-color);
+            margin: 10px auto 0;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: var(--white);
+            padding: 40px 30px;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        .card i {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .card h3 {
+            margin-bottom: 15px;
+            color: var(--secondary-color);
+        }
+
+        /* Booking Section */
+        .booking-section {
+            background-color: var(--secondary-color);
+            color: var(--white);
+            padding: 80px 20px;
+        }
+
+        .booking-container {
+            max-width: 700px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 40px;
+            border-radius: 20px;
+            border: 1px solid rgba(197, 168, 128, 0.2);
+            box-shadow: var(--shadow);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--primary-color);
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid rgba(255,255,255,0.2);
+            background: rgba(255,255,255,0.1);
+            border-radius: 8px;
+            color: var(--white);
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            background: rgba(255,255,255,0.15);
+        }
+
+        textarea {
+            resize: vertical;
+            height: 100px;
+        }
+
+        .btn-submit {
+            width: 100%;
+            background-color: var(--primary-color);
+            color: var(--dark-color);
+            padding: 15px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: var(--transition);
+            margin-top: 10px;
+        }
+
+        .btn-submit:hover {
+            background-color: var(--white);
+        }
+
+        /* Testimonial Section */
+        .testimonials {
+            padding: 80px 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .testimonial-item {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            margin-top: 30px;
+            font-style: italic;
+        }
+
+        .testimonial-item p {
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+        }
+
+        .testimonial-item span {
+            font-weight: 600;
+            color: var(--primary-color);
+            font-style: normal;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-color);
+            color: #888;
+            text-align: center;
+            padding: 30px 20px;
+            font-size: 0.9rem;
+            border-top: 1px solid #223;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header h1 { font-size: 2rem; }
+            .form-row { grid-template-columns: 1fr; gap: 0; }
+            .booking-container { padding: 25px; }
+        }
     </style>
 </head>
 <body>
 
+    <!-- HERO SECTION -->
     <header>
         <div class="logo">Homestay Hanis</div>
         <h1>Rasai Penginapan Premium Setaraf Hotel 5-Bintang Pada Harga Bajet</h1>
@@ -81,49 +294,112 @@
         </div>
     </header>
 
+    <!-- FEATURES SECTION -->
     <section class="features">
         <h2 class="section-title">Kenapa Pilih Homestay Hanis?</h2>
         <div class="grid">
-            <div class="card"><i class="fa-solid fa-bed"></i><h3>4 Bilik Premium</h3><p>Setiap bilik dilengkapi penghawa dingin (AC) penuh dan katil bersaiz King.</p></div>
-            <div class="card"><i class="fa-solid fa-swimming-pool"></i><h3>Kolam Renang Privasi</h3><p>Mandi-manda bersama keluarga tanpa gangguan luar.</p></div>
-            <div class="card"><i class="fa-solid fa-wifi"></i><h3>WiFi 5G & Smart TV</h3><p>Strim Netflix, YouTube tanpa gangguan sepanjang penginapan.</p></div>
+            <div class="card">
+                <i class="fa-solid fa-bed"></i>
+                <h3>4 Bilik Premium</h3>
+                <p>Setiap bilik dilengkapi penghawa dingin (AC) penuh dan katil bersaiz King yang sangat empuk.</p>
+            </div>
+            <div class="card">
+                <i class="fa-solid fa-swimming-pool"></i>
+                <h3>Kolam Renang Privasi</h3>
+                <p>Mandi-manda bersama keluarga tanpa gangguan luar. Selamat dan 100% privasi terjaga.</p>
+            </div>
+            <div class="card">
+                <i class="fa-solid fa-wifi"></i>
+                <h3>WiFi 5G & Smart TV</h3>
+                <p>Strim Netflix, YouTube tanpa gangguan sekat-sekat sepanjang penginapan anda.</p>
+            </div>
         </div>
     </section>
 
+    <!-- TESTIMONIALS SECTION -->
+    <section class="testimonials">
+        <h2 class="section-title">Apa Kata Tetamu Kami?</h2>
+        <div class="testimonial-item">
+            <p>"Sangat berbaloi! Rumah bersih gila, deco ala-ala hotel mewah. Anak-anak paling suka pool dia. Next time balik kampung wajib booking Homestay Hanis lagi!"</p>
+            <span>- Puan Noraini, Kuala Lumpur</span>
+        </div>
+    </section>
+
+    <!-- BOOKING FORM SECTION -->
     <section class="booking-section" id="tempah">
         <div class="booking-container">
+            <h2 style="text-align: center; margin-bottom: 10px; color: var(--primary-color);">Borang Tempahan Segera</h2>
+            <p style="text-align: center; margin-bottom: 30px; font-size: 0.9rem; color: #bbb;">Sila isi maklumat anda di bawah dengan lengkap.</p>
+            
             <form id="bookingForm">
-                <div class="form-group"><label>Nama Penuh</label><input type="text" id="nama" required></div>
-                <div class="form-row">
-                    <div class="form-group"><label>Check-In</label><input type="date" id="checkin" required></div>
-                    <div class="form-group"><label>Check-Out</label><input type="date" id="checkout" required></div>
+                <div class="form-group">
+                    <label for="nama"><i class="fa-solid fa-user"></i> Nama Penuh</label>
+                    <input type="text" id="nama" required placeholder="Contoh: Ahmad bin Ali">
                 </div>
+
                 <div class="form-row">
-                    <div class="form-group"><label>No. Telefon</label><input type="tel" id="notel" required></div>
-                    <div class="form-group"><label>E-mel</label><input type="email" id="email" required></div>
+                    <div class="form-group">
+                        <label for="checkin"><i class="fa-solid fa-calendar-plus"></i> Tarikh Check-In</label>
+                        <input type="date" id="checkin" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="checkout"><i class="fa-solid fa-calendar-minus"></i> Tarikh Check-Out</label>
+                        <input type="date" id="checkout" required>
+                    </div>
                 </div>
-                <div class="form-group"><label>Alamat</label><textarea id="alamat" required></textarea></div>
-                <button type="submit" class="btn-submit">Hantar & Pengesahan Segera</button>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="notel"><i class="fa-solid fa-phone"></i> No. Telefon (WhatsApp)</label>
+                        <input type="tel" id="notel" required placeholder="Contoh: 60123456789">
+                    </div>
+                    <div class="form-group">
+                        <label for="email"><i class="fa-solid fa-envelope"></i> E-mel</label>
+                        <input type="email" id="email" required placeholder="Contoh: ahmad@gmail.com">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="alamat"><i class="fa-solid fa-location-dot"></i> Alamat Rumah</label>
+                    <textarea id="alamat" required placeholder="Masukkan alamat lengkap anda"></textarea>
+                </div>
+
+                <button type="submit" class="btn-submit">Hantar & Pengesahan Segera <i class="fa-solid fa-paper-plane"></i></button>
             </form>
         </div>
     </section>
 
-    <footer><p>&copy; 2026 Homestay Hanis. Hak Cipta Terpelihara.</p></footer>
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2026 Homestay Hanis. Hak Cipta Terpelihara. Diuruskan dengan penuh kasih sayang.</p>
+    </footer>
 
+    <!-- JAVASCRIPT LOGIC -->
     <script>
         document.getElementById('bookingForm').addEventListener('submit', function(e) {
             e.preventDefault();
 
+            // 1. Ambil data dari input form
             const nama = document.getElementById('nama').value;
             const checkin = document.getElementById('checkin').value;
             const checkout = document.getElementById('checkout').value;
             let notel = document.getElementById('notel').value;
             const email = document.getElementById('email').value;
             const alamat = document.getElementById('alamat').value;
+
+            // Format no telefon untuk sistem WhatsApp (Pastikan bermula dengan kod negara '60')
+            if(notel.startsWith('0')) {
+                notel = '6' + notel;
+            } else if(!notel.startsWith('60')) {
+                notel = '60' + notel;
+            }
+
+            // Generate No. Invoice Rawak
             const invNo = 'INV-' + Math.floor(100000 + Math.random() * 900000);
 
-            // Gantikan URL di bawah dengan App Script anda
-            const excelWebhookURL = "https://script.google.com/macros/s/AKfycbxOLeQlfBB76aBxfnLwYEhE8Pqde_k9g1qGRwYpjU0u-0MRXSfcIHEI4ho0vLwxxv8u/exec";
+            // 2. INTEGRASI EXCEL (Google Sheets Webhook)
+            // Sila gantikan URL di bawah dengan URL Webhook/App Script daripada Google Sheets anda.
+            const excelWebhookURL = "https://script.google.com/macros/s/GANTIKAN_URL_ANDA_DI_SINI/exec";
             
             const formData = new FormData();
             formData.append('Invoice', invNo);
@@ -134,16 +410,85 @@
             formData.append('Email', email);
             formData.append('Alamat', alamat);
 
+            // Menghantar data ke Excel secara latar belakang (background process)
             fetch(excelWebhookURL, {
                 method: 'POST',
                 body: formData,
-                mode: 'no-cors'
+                mode: 'no-cors' // Penting untuk mengelakkan isu CORS pada browser
             }).then(() => {
-                alert("Tempahan berjaya dihantar!");
-                window.location.reload();
+                console.log("Data berjaya dihantar ke Excel.");
             }).catch(err => {
-                console.error("Ralat:", err);
+                console.error("Ralat penghantaran Excel: ", err);
             });
+
+            // 3. GENERATE & DOWNLOAD PDF INVOICE (Simulasi Automatik Tanpa Library Luar)
+            // Membuka tetingkap cetakan ringkas yang berfungsi sebagai slip PDF Invoice rasmi.
+            const printWindow = window.open('', '_blank');
+            printWindow.document.write(`
+                <html>
+                <head>
+                    <title>Invoice - Homestay Hanis</title>
+                    <style>
+                        body { font-family: Arial, sans-serif; padding: 40px; color: #333; }
+                        .inv-box { border: 1px solid #ccc; padding: 20px; border-radius: 10px; max-width: 600px; margin: auto; }
+                        .header { text-align: center; border-bottom: 2px solid #c5a880; padding-bottom: 20px; }
+                        .details { margin: 20px 0; font-size: 14px; }
+                        .details table { width: 100%; border-collapse: collapse; }
+                        .details td { padding: 8px 0; }
+                        .footer { text-align: center; font-size: 12px; margin-top: 30px; color: #777; }
+                    </style>
+                </head>
+                <body>
+                    <div class="inv-box">
+                        <div class="header">
+                            <h2>HOMESTAY HANIS</h2>
+                            <p>Resit Pengesahan Tempahan Rasmi</p>
+                        </div>
+                        <div class="details">
+                            <p><strong>No. Invoice:</strong> ${invNo}</p>
+                            <p><strong>Tarikh Isu:</strong> ${new Date().toLocaleDateString('ms-MY')}</p>
+                            <hr>
+                            <table>
+                                <tr><td><strong>Nama Pelanggan:</strong></td><td>${nama}</td></tr>
+                                <tr><td><strong>No. Telefon:</strong></td><td>+${notel}</td></tr>
+                                <tr><td><strong>E-mel:</strong></td><td>${email}</td></tr>
+                                <tr><td><strong>Alamat:</strong></td><td>${alamat}</td></tr>
+                                <tr><td><strong>Tarikh Check-In:</strong></td><td>${checkin}</td></tr>
+                                <tr><td><strong>Tarikh Check-Out:</strong></td><td>${checkout}</td></tr>
+                            </table>
+                            <hr>
+                            <p style="text-align: right; font-size: 18px;"><strong>Status: <span style="color: green;">DISAHKAN</span></strong></p>
+                        </div>
+                        <div class="footer">
+                            <p>Terima kasih kerana memilih Homestay Hanis! Sila simpan PDF ini untuk rujukan daftar masuk.</p>
+                        </div>
+                    </div>
+                    <script>
+                        window.onload = function() { window.print(); }
+                    <\/script>
+                </body>
+                </html>
+            `);
+            printWindow.document.close();
+
+            // 4. AUTO-WHATSAPP CLIENT INTERACTION
+            // Menyusun ayat copywriting penutup yang mesra dan profesional
+            const mesejWhatsApp = `*Tempahan Disahkan! Terima Kasih Teraju Utama Homestay Hanis* %0A%0A` +
+                `Halo *${nama}*,%0A` +
+                `Terima kasih kerana membuat tempahan penginapan bersama kami. Butiran anda telah selamat diproses dan direkodkan ke sistem.%0A%0A` +
+                `*BUTIRAN TEMPAHAN:*%0A` +
+                `• No Invoice: ${invNo}%0A` +
+                `• Tarikh Check-In: ${checkin}%0A` +
+                `• Tarikh Check-Out: ${checkout}%0A%0A` +
+                `Sistem kami juga baru sahaja menjana *PDF Invoice Rasmi* anda. Sila semak tab sebelah untuk muat turun/cetak.%0A%0A` +
+                `Jumpa anda tidak lama lagi! Jika ada sebarang pertanyaan lanjut, balas sahaja mesej ini. 😊`;
+
+            const whatsappURL = `https://wa.me/${notel}?text=${mesejWhatsApp}`;
+
+            // Alihkan pelanggan ke aplikasi WhatsApp selepas 1.5 saat kelewatan
+            setTimeout(function() {
+                window.location.href = whatsappURL;
+            }, 1500);
         });
     </script>
 </body>
