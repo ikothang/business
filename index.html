@@ -212,7 +212,7 @@
             transform: translateY(-3px);
         }
 
-        /* URGENCY ALERT BANNER */
+        /* URGENCY ALERT BANARY */
         .scarcity-banner {
             background: linear-gradient(90deg, #B91C1C, #EF4444);
             color: var(--white);
@@ -1157,28 +1157,43 @@
             </ol>
             <pre style="background: #FFF; padding: 15px; border-radius: 8px; border: 1px solid #F59E0B; margin: 10px 0; font-family: monospace; overflow-x: auto; font-size: 0.8rem; color: #1F2937;">
 function doPost(e) {
-  var sheet = SpreadsheetApp.openByUrl("https://docs.google.com/spreadsheets/d/1w-UvCdue0BJvms_o5U0PzU4CoGnp791R/edit?usp=sharing&ouid=116404865907969441378&rtpof=true&sd=true").getActiveSheet();
-  
-  // Mengendalikan data jenis JSON yang dihantar daripada GitHub Pages
-  var data = JSON.parse(e.postData.contents);
-  
-  // Dapatkan baris kosong seterusnya
-  var nextRow = sheet.getLastRow() + 1;
-  
-  // Masukkan data secara spesifik ke Column B (2) hingga G (7) mengikut header anda (B1 hingga G1)
-  sheet.getRange(nextRow, 2).setValue(data.Nama);      // Column B (B1: Nama)
-  sheet.getRange(nextRow, 3).setValue(data.CheckIn);   // Column C (C1: Tarikh Check-In)
-  sheet.getRange(nextRow, 4).setValue(data.CheckOut);  // Column D (D1: Tarikh Check-Out)
-  sheet.getRange(nextRow, 5).setValue(data.NoTel);     // Column E (E1: No Tel)
-  sheet.getRange(nextRow, 6).setValue(data.Email);     // Column F (F1: Email)
-  sheet.getRange(nextRow, 7).setValue(data.Alamat);    // Column G (G1: Alamat)
-  
-  // Opsional: Anda boleh masukkan No Invoice atau No Rujukan di Column A jika ada
-  sheet.getRange(nextRow, 1).setValue(data.Invoice);   // Column A (A1: Invoice)
-  
-  // Mengembalikan respon CORS yang mesra untuk GitHub Pages
-  return ContentService.createTextOutput(JSON.stringify({"result": "success"}))
-                       .setMimeType(ContentService.MimeType.JSON);
+  try {
+    var sheet = SpreadsheetApp
+      .openById("1w-UvCdue0BJvms_o5U0PzU4CoGnp791R")
+      .getSheetByName("Book1");
+
+    var data = JSON.parse(e.postData.contents);
+
+    var nextRow = sheet.getLastRow() + 1;
+
+    sheet.getRange(nextRow, 1).setValue(nextRow - 1); // No
+    sheet.getRange(nextRow, 2).setValue(data.Nama);
+    sheet.getRange(nextRow, 3).setValue(data.CheckIn);
+    sheet.getRange(nextRow, 4).setValue(data.CheckOut);
+    sheet.getRange(nextRow, 5).setValue(data.NoTel);
+    sheet.getRange(nextRow, 6).setValue(data.Email);
+    sheet.getRange(nextRow, 7).setValue(data.Alamat);
+
+    return ContentService
+      .createTextOutput(
+        JSON.stringify({
+          status: "success"
+        })
+      )
+      .setMimeType(ContentService.MimeType.JSON);
+
+  } catch(err) {
+
+    return ContentService
+      .createTextOutput(
+        JSON.stringify({
+          status: "error",
+          message: err.toString()
+        })
+      )
+      .setMimeType(ContentService.MimeType.JSON);
+
+  }
 }</pre>
             <ol start="3" style="margin-left: 20px;">
                 <li>Klik <strong>Deploy</strong> > <strong>New Deployment</strong>. Pilih jenis <strong>Web App</strong>. Set "Execute as" sebagai <strong>Me</strong> dan "Who has access" kepada <strong>Anyone</strong>.</li>
